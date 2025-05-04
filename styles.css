@@ -16,32 +16,57 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(8px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     z-index: 100;
-    transition: background 0.3s ease;
 }
 
-nav ul {
+.menu-button {
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    padding: 20px;
+}
+
+.menu ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 0;
 }
 
-nav a {
+.menu a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    transition: color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 15px 0;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
+.menu a:hover {
     color: #8A6859;
-    transform: scale(1.05);
+}
+
+/* Show menu */
+.menu.open {
+    right: 0;
 }
 
 .container {
@@ -50,38 +75,7 @@ nav a:hover {
     padding-top: 80px;
 }
 
-h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.subheading {
-    font-size: 1.2rem;
-    color: #8A6859;
-    margin-bottom: 20px;
-}
-
-.image-section img {
-    width: 100%;
-    border-radius: 10px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.description {
-    font-size: 1rem;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-.product-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.product {
+.image-section img, .product {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
