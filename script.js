@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section");
 
-    links.forEach(link => {
-        link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-            targetSection.scrollIntoView({ behavior: "smooth" });
+    function reveal() {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < window.innerHeight * 0.85) {
+                section.classList.add("visible");
+            }
         });
-    });
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal();
 });
