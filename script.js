@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector(".menu");
+
+    menuButton.addEventListener("click", function() {
+        menu.classList.toggle("open");
+    });
+
     const elements = document.querySelectorAll("img, .product");
-    const header = document.querySelector("header");
 
     function reveal() {
         elements.forEach(el => {
@@ -13,12 +19,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("scroll", reveal);
     reveal();
-
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 50) {
-            header.style.background = "rgba(255, 255, 255, 0.95)";
-        } else {
-            header.style.background = "rgba(255, 255, 255, 0.85)";
-        }
-    });
 });
