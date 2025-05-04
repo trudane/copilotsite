@@ -75,15 +75,12 @@ header {
     padding-top: 80px;
 }
 
-.image-section img, .product {
+.image-section img, .product img {
+    width: 100%;
+    border-radius: 10px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.product img {
-    width: 100%;
-    border-radius: 10px;
 }
 
 footer {
