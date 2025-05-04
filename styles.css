@@ -1,17 +1,23 @@
 body {
-    font-family: 'Serif', sans-serif;
+    font-family: 'Georgia', serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #FAF9F6;
     color: #333;
+    text-align: center;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    align-items: center;
+    padding: 15px 40px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
 }
 
 nav ul {
@@ -23,25 +29,53 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8A6859;
+}
+
+main {
+    padding-top: 80px;
+}
+
+section {
+    padding: 100px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 #hero {
-    text-align: center;
-    padding: 100px 20px;
     background: url('hero.jpg') no-repeat center/cover;
     color: white;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .product {
     display: inline-block;
-    width: 45%;
-    text-align: center;
+    width: 40%;
     margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: scale(1.05);
 }
 
 footer {
-    text-align: center;
     padding: 20px;
     background-color: #fff;
+    margin-top: 40px;
+}
+
+/* Smooth transitions */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
